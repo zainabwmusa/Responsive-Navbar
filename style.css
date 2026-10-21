@@ -1,0 +1,170 @@
+/*
+Responsiveness: simply means designing your website to fit different devices and screen sizes.
+
+Media Query: used to apply changes to our websites based on the size of the screen.
+Min height: style affects higher heights
+Max height: style affects lower heights
+Min width: style affects higher widths
+Max width: style affects lower widths
+
+Create Responsive Navbar, Responsive website
+*/
+
+/* .box{
+  width: 200px;
+  height: 200px;
+  background-color: red;
+}
+ */
+/* Anything styled here would only affect device screens of 500px and above */
+/* @media (min-width: 500px) {
+  .box{
+    background-color: blue;
+  }
+} */
+
+/* Anything styled here would only affect device screens of 500px and below */
+/* @media (max-width: 500px) {
+  .box{
+    background-color: blue;
+  }
+} */
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(95, 19, 19);
+  color: #fff;
+  padding: 10px 20px;
+}
+
+header .logo h1 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+
+
+header ul li {
+  list-style-type: none;
+}
+
+header nav ul {
+  display: flex;
+}
+
+header a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  padding: 10px 20px;
+}
+
+header a:hover {
+  background-color: #fff;
+  color: rgb(95, 19, 19);
+}
+
+header .btn {
+  background-color: #fff;
+  border-radius: 5px;
+  color: rgb(95, 19, 19);
+  transition-duration: 0.5s;
+  border: 1px solid #fff;
+}
+
+header .btn:hover {
+  background-color: rgb(95, 19, 19);
+  color: #fff;
+}
+
+header input[type="checkbox"] {
+  display: none;
+}
+
+header label {
+  font-size: 20px;
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  header nav {
+    position: absolute;
+    top: 49px;
+    background-color: #5f1313;
+    padding: 20px 0;
+    left: 0;
+    right: 0;
+    /* display: none; */
+    transform: translateX(-300%);
+    transition-duration: 0.5s;
+    height: 100vh;
+    width: 100%;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    line-height: 2.5;
+  }
+
+  header nav a {
+    font-size: 20px;
+  }
+
+  header .btn {
+    width: max-content;
+    margin: 0 auto;
+  }
+
+  header label {
+    display: block;
+    border: 1px solid #fff4f4;
+    padding: 5px 15px;
+    border-radius: 10px;
+    transition-duration: 0.5s;
+  }
+
+  header label:hover {
+    box-shadow: 0px 0px 11px 0px #fff;
+  }
+
+  body:has(#menu:checked) header nav {
+    /* display: block; */
+    transform: translateX(0);
+  }
+
+  header label .bar {
+    width: 20px;
+    height: 2px;
+    display: block;
+    background-color: #fff;
+    margin: 3px;
+    transition-duration: 0.5s;
+  }
+
+  body:has(#menu:checked) header label .bar:nth-child(3) {
+    display: none;
+  }
+
+  body:has(#menu:checked) header label .bar:nth-child(1) {
+    transform: rotate(40deg) translate(3px, 0px);
+  }
+
+  body:has(#menu:checked) header label .bar:nth-child(2) {
+    transform: rotate(-40deg) translate(3px, -3px);
+  }
+
+}
